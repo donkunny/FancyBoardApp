@@ -3,7 +3,7 @@ This is bulletin board app which will be added with bootstrap UI, reply function
 
 <h3>Tutorial</h3>
 Add root-context.xml on ../webapp/WEB-INF/spring
-
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -36,3 +36,4 @@ Add root-context.xml on ../webapp/WEB-INF/spring
 	
 	<context:component-scan base-package="com.donkunny"></context:component-scan>
 </beans>
+```
