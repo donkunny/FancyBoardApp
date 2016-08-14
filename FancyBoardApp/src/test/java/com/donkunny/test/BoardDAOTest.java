@@ -21,6 +21,7 @@ public class BoardDAOTest {
 	
 	private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 	
+	@Test
 	public void testCreate() throws Exception {
 		BoardVO board = new BoardVO();
 		board.setTitle("test title");
@@ -44,7 +45,7 @@ public class BoardDAOTest {
 		dao.update(board);
 	}
 	
-	@Test
+//	@Test
 	public void testDelete() throws Exception {
 		dao.delete(1);
 	}
