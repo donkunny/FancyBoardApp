@@ -1,3 +1,9 @@
+# FancyBoardApp
+This is bulletin board app which will be added with bootstrap UI, reply function
+
+<h3>Tutorial</h3>
+Add root-context.xml on ../webapp/WEB-INF/spring
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -14,8 +20,8 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/board2"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="ehdgur84265"></property>
+		<property name="username" value="{userName}"></property>
+		<property name="password" value="{password}"></property>
 	</bean> 
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -29,5 +35,5 @@
 	</bean>
 	
 	<context:component-scan base-package="com.donkunny"></context:component-scan>
-	
 </beans>
+```
