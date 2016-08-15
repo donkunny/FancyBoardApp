@@ -36,12 +36,21 @@
 				<td><a href='/board/read?bno=${boardVO.bno}'>
 						${boardVO.title}</a></td>
 				<td>${boardVO.writer}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-						value="${boardVO.regdate}" /></td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
 				<td>${boardVO.viewcnt}</td>
 			</tr>
 		</c:forEach>
 	</table>
-	
+
+	<script>
+		var result = '${msg}';
+
+		if (result == 'SUCCESS') {
+			alert("처리가 완료되었습니다.");
+		} else if(result == 'REGISTER'){
+			alert("등록이 완료되었습니다.");
+		}
+	</script>
+
 </body>
 </html>

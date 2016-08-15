@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.donkunny.domain.BoardVO;
 import com.donkunny.service.BoardService;
@@ -28,12 +29,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String registerPOST(BoardVO board, Model model) throws Exception {
+	public String registerPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
 		logger.info("regist post..................");
 		logger.info(board.toString());
 		
 		service.regist(board);
-		model.addAttribute("result", "success");
+		rttr.addFlashAttribute("msg", "REGISTER");
+		// model.addAttribute("msg", "SUCCESS");
 		
 		// return "/board/success";
 		return "redirect:/board/listAll";
@@ -48,6 +50,28 @@ public class BoardController {
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public void read(@RequestParam("bno")int bno, Model model) throws Exception{
 		model.addAttribute(service.read(bno));
+	}
+	
+	@RequestMapping(value="/remove", method=RequestMethod.POST)
+	public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr) throws Exception{
+		service.remove(bno);
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/listAll";
+	}
+	
+	@RequestMapping(value="/modify", method = RequestMethod.GET)
+	public void modifyGET(int bno, Model model) throws Exception {
+		model.addAttribute(service.read(bno));
+	}
+	
+	@RequestMapping(value="/modify", method = RequestMethod.POST)
+	public String modifyPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
+		logger.info("modify post..................");
+		service.modify(board);
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/listAll";
 	}
 	
 }
