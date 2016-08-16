@@ -35,8 +35,16 @@
 		</div>
 		
 		<div class="box-footer">
-			<button class="btn btn-default" class="btn-submit">Submit</button>
+			<button class="btn btn-primary">등록</button>
 		</div>
 	</form>
+	
+	<button class="btn btn-danger">취소</button>
+	<script src="/resources/jquery-3.1.0.min.js"></script>
+	<script>
+		$(".btn-danger").on("click", function() {
+			self.location = "/board/listAll";
+		});
+	</script>
 </body>
 </html>
