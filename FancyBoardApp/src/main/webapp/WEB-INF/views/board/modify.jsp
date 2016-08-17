@@ -46,7 +46,7 @@
 		<button type="submit" class="btn btn-primary">저장</button>
 		<button type="submit" class="btn btn-warning">취소</button>
 	</div>
-</form>
+	</form>
 	<script src="/resources/jquery-3.1.0.min.js"></script>
 	<script>
 		$(document).ready(function() {

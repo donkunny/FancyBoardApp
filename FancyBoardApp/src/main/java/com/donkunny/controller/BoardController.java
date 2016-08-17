@@ -41,7 +41,7 @@ public class BoardController {
 		// model.addAttribute("msg", "SUCCESS");
 		
 		// return "/board/success";
-		return "redirect:/board/listAll";
+		return "redirect:/board/listPage";
 	}
 	
 	@RequestMapping(value="/listAll", method = RequestMethod.GET)
@@ -117,7 +117,7 @@ public class BoardController {
 		return "redirect:/board/listPage";
 	}
 	
-	@RequestMapping(value="modifyPage", method=RequestMethod.GET)
+	@RequestMapping(value="/modifyPage", method=RequestMethod.GET)
 	public void modifyPagingGET(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
 		model.addAttribute(service.read(bno));
 	}
@@ -132,5 +132,21 @@ public class BoardController {
 		
 		return "redirect:/board/listPage";
 	}
+/*	
+	@RequestMapping(value="/registerPage", method=RequestMethod.GET)
+	public void registerPageGET(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+		logger.info("registerPage get ...................");
+	}
 	
+	@RequestMapping(value="/registerPage", method=RequestMethod.POST)
+	public String registerPagePOST(BoardVO board, Criteria cri, RedirectAttributes rttr) throws Exception{
+		service.regist(board);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		return "redirect:/board/listPage";
+	}
+*/	
 }
