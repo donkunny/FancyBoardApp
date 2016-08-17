@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.donkunny.domain.BoardVO;
 import com.donkunny.domain.Criteria;
+import com.donkunny.domain.SearchCriteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO{
@@ -43,6 +44,9 @@ public class BoardDAOImpl implements BoardDAO{
 		return session.selectList(namespace+".listAll");
 	}
 
+	/**
+	 * for adding 'search function'
+	 */
 	@Override
 	public List<BoardVO> listPage(int page) throws Exception {
 		
@@ -64,5 +68,19 @@ public class BoardDAOImpl implements BoardDAO{
 	public int countPaging(Criteria cri) throws Exception {
 		return session.selectOne(namespace+".countPaging", cri);
 	}
+
+	/**
+	 * for adding 'dynamic sql'
+	 */
+	@Override
+	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+		return session.selectList(namespace+".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return session.selectOne(namespace+".listSearchCount", cri);
+	}
+	
 	
 }
