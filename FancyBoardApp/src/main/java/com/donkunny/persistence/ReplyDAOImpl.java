@@ -15,29 +15,26 @@ public class ReplyDAOImpl implements ReplyDAO{
 	@Inject
 	private SqlSession session;
 	
-	
+	private static String namespace = "com.donkunny.mapper.ReplyMapper";
 	
 	@Override
 	public List<ReplyVO> list(Integer bno) throws Exception {
-		return null;
+		return session.selectList(namespace+ ".list", bno);
 	}
 
 	@Override
 	public void create(ReplyVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		session.insert(namespace+".create", vo);
 	}
 
 	@Override
 	public void update(ReplyVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		session.update(namespace+".update", vo);
 	}
 
 	@Override
 	public void delete(Integer rno) throws Exception {
-		// TODO Auto-generated method stub
-		
+		session.update(namespace+".delete", rno);
 	}
 	
 }
