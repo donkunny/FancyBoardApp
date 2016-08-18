@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="box-header">
-		<h3 class="box-title">LIST ALL PAGE</h3>
+		<h3 class="box-title" align="center">동쿠니 게시판</h3>
 	</div>
 	<br><br>
 	<!-- Search function -->
