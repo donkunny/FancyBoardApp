@@ -17,7 +17,7 @@
 	</insert>	
 	
 	<update id="update">
-		update tbl_board set replytext = #{replytext}, updatedate = now()
+		update tbl_reply set replytext = #{replytext}, updatedate = now()
 		where rno = #{rno}	
 	</update>
 	
