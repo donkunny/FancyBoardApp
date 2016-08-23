@@ -19,10 +19,32 @@
 		<h3 class="box-title" align="center">동쿠니 게시판</h3>
 	</div>
 	<br><br>
+	<br><br>
+
+	<table class="table table-striped">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>날짜</th>
+			<th style="width: 60px">조회수</th>
+		</tr>
+		<c:forEach items="${list}" var="boardVO">
+			<tr>
+				<td>${boardVO.bno}</td>
+				<td><a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
+						${boardVO.title}</a></td>
+				<td>${boardVO.writer}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
+				<td><span class="badge bg-red">${boardVO.viewcnt}</span> </td>
+			</tr>
+		</c:forEach>
+	</table>
+	
 	<!-- Search function -->
-	<div class="box-body">
-		<div class="col-xs-2">
-			<select name="searchType" class="form-control">
+	<div class="box-body" >
+		<div class="col-xs-2" >
+			<select name="searchType" class="form-control" >
 				<option value="n"
 					<c:out value="${cri.searchType == null?'selected':''}" />>
 					---</option>
@@ -56,28 +78,7 @@
 		<button type="button" class="btn btn-default" id="searchBtn" >찾기</button>
 		<button type="button" class="btn btn-default" id="newBtn" >새로운 글쓰기</button>
 	</div>
-	<br><br>
-
-	<table class="table table-striped">
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>날짜</th>
-			<th style="width: 60px">조회수</th>
-		</tr>
-		<c:forEach items="${list}" var="boardVO">
-			<tr>
-				<td>${boardVO.bno}</td>
-				<td><a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
-						${boardVO.title}</a></td>
-				<td>${boardVO.writer}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
-				<td><span class="badge bg-red">${boardVO.viewcnt}</span> </td>
-			</tr>
-		</c:forEach>
-	</table>
-
+	<br>
 	<!-- pagination -->
 	<div class="box-footer">
 		

@@ -28,7 +28,7 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">제목</label> 
-							<input type="text" name='title' class="form-control" placeholder="제목을 입력하세요...">
+							<input type="text" name='title' class="form-control" placeholder="제목을 입력하세요..." required="required">
 						</div>
 						
 						<div class="form-group">
@@ -37,7 +37,7 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">작성자</label> 
-							<input type="text" name="writer" class="form-control" placeholder="작성자를 입력하세요...">
+							<input type="text" name="writer" class="form-control" placeholder="작성자를 입력하세요..." required="required" >
 						</div>
 					</div>
 					
