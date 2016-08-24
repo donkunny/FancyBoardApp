@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="box-header">
-		<h3 class="box-title" align="center">동쿠니 게시판</h3>
+		<h2 class="box-title" align="center"><strong>동쿠니 게시판</strong></h2>
 	</div>
 	<br><br>
 	<br><br>
@@ -33,7 +33,7 @@
 			<tr>
 				<td>${boardVO.bno}</td>
 				<td><a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
-						${boardVO.title}</a></td>
+						${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong></a></td>
 				<td>${boardVO.writer}</td>
 				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
 				<td><span class="badge bg-red">${boardVO.viewcnt}</span> </td>

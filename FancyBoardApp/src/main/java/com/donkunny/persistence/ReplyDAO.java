@@ -23,4 +23,10 @@ public interface ReplyDAO {
 	 */
 	public List<ReplyVO> listPage(Integer bno, Criteria cri) throws Exception;
 	public int count(Integer bno) throws Exception;
+	
+	/**
+	 * 댓글 개수를 가져오기 위해 필요한 메소드
+	 */
+	public int getBno(Integer rno) throws Exception;
 }
+
