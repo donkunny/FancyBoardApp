@@ -7,7 +7,7 @@ public class Criteria {
 	
 	public Criteria() {
 		this.page = 1;
-		this.perPageNum = 10;
+		this.perPageNum = 20; // 한 페이지 당 보여줄 게시글
 	}
 	
 	public void setPage(int page) {

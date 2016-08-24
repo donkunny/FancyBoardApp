@@ -22,4 +22,10 @@ public interface BoardDAO {
 	// for dynamic sql
 	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
 	public int listSearchCount(SearchCriteria cri) throws Exception;
+	
+	// for counting replies
+	public void updateReplyCnt(Integer bno, int amount) throws Exception;
+	
+	// for counting views
+	public void updateViewCnt(Integer bno) throws Exception;
 }

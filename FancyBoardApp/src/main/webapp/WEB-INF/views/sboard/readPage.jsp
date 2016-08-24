@@ -68,8 +68,11 @@
 
 			<!-- 댓글 리스트 펼치기 part -->
 			<ul class="list-group" >
-				<!-- <li class="list-group-item active" id="repliesDiv" >댓글 리스트 펼치기</li>  -->
-				<button class="btn btn-primary" id="repliesDiv" >댓글 리스트 펼치기</button>
+				<button class="btn btn-primary" id="repliesDiv" >
+				<span class="bg-green">
+				댓글 리스트 펼치기 <small id="replycntSmall">[ ${boardVO.replycnt} ]</small>  
+				</span></button>
+				<!-- <button class="btn btn-primary" id="repliesDiv" >댓글 리스트 펼치기</button>  -->
 			</ul>
 			
 			<div class="text-center" >
@@ -148,6 +151,9 @@
 			$.getJSON(pageInfo, function(data){
 				printData(data.list, $("#repliesDiv"), $('#template'));
 				printPaging(data.pageMaker, $(".pagination"));
+				
+				$("#modifyModal").modal('hide');
+				$("#replycntSmall").html("[ " + data.pageMaker.totalCount + " ]");
 			});
 		}
 		
@@ -197,6 +203,7 @@
 			var replytextObj = $("#newReplyText");
 			var replyer = replyerObj.val();
 			var replytext = replytextObj.val();
+			// console.log(bno);
 			
 			$.ajax({
 				type: 'post',
