@@ -25,6 +25,9 @@ mysql> create table tbl_reply (
     -> updatedate TIMESTAMP NOT NULL DEFAULT now(),
     -> primary key(rno)
     -> );
+
+// add foreign key in tbl_reply
+mysql> alter table tbl_reply add constraint fk_board foreign key (bno) references tbl_board (bno);
 ```
 <h4>2. Initial repository Import </h4>
 ```
