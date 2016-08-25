@@ -103,9 +103,9 @@
 		</div>
 	</div>
 	
-	<script src="/resources/jquery-3.1.0.min.js"></script>
-	<script src="/resources/bootstrap/js/bootstrap.js" ></script>
-	<script src="/resources/handlebars-v4.0.5.js"></script>
+	<script src="<%=pageContext.getServletContext().getContextPath()%>/resources/jquery-3.1.0.min.js"></script>
+	<script src="<%=pageContext.getServletContext().getContextPath()%>/resources/bootstrap/js/bootstrap.js" ></script>
+	<script src="<%=pageContext.getServletContext().getContextPath()%>/resources/handlebars-v4.0.5.js"></script>
 	<script type="text/x-handlebars-template" id="template" >
 		{{#each .}}
 		<li class="replyLi" data-rno={{rno}} >
@@ -181,7 +181,7 @@
 				return;
 			} 
 			*/
-			getPage("/replies/" + bno + "/1");
+			getPage("<%=pageContext.getServletContext().getContextPath()%>/replies/" + bno + "/1");
 		});
 		
 		$(".pagination").on("click", "li a", function(event){
@@ -207,7 +207,7 @@
 			
 			$.ajax({
 				type: 'post',
-				url: '/replies/',
+				url: '<%=pageContext.getServletContext().getContextPath()%>/replies/',
 				headers: {
 					"Content-Type": "application/json",
 					"X-HTTP-Method-Override": "POST"
@@ -219,7 +219,7 @@
 					if(result == 'SUCCESS'){
 						alert("등록 되었습니다.");
 						replyPage = 1;
-						getPage("/replies/" + bno + "/" + replyPage);
+						getPage("<%=pageContext.getServletContext().getContextPath()%>/replies/" + bno + "/" + replyPage);
 						replyerObj.val("");
 						replytextObj.val("");
 					}
@@ -233,7 +233,7 @@
 			
 			$.ajax({
 				type: 'put',
-				url: '/replies/' + rno,
+				url: '<%=pageContext.getServletContext().getContextPath()%>/replies/' + rno,
 				headers: {
 					"Content-Type": "application/json",
 					"X-HTTP-Method-Override": "PUT" },
@@ -243,7 +243,7 @@
 					console.log("result: " + result);
 					if(result == 'SUCCESS'){
 						alert("수정 되었습니다.");
-						getPage("/replies/" +  bno + "/" + replyPage);
+						getPage("<%=pageContext.getServletContext().getContextPath()%>/replies/" +  bno + "/" + replyPage);
 					}
 				}
 			});
@@ -256,7 +256,7 @@
 			
 			$.ajax({
 				type: 'delete',
-				url: '/replies/' + rno,
+				url: '<%=pageContext.getServletContext().getContextPath()%>/replies/' + rno,
 				headers: {
 					"Content-Type": "application/json",
 					"X-HTTP-Method-Override": "DELETE" },
@@ -265,7 +265,7 @@
 					console.log("result: " + result);
 					if(result == 'SUCCESS'){
 						alert("삭제되었습니다.");
-						getPage("/replies/" + bno + "/" + replyPage);
+						getPage("<%=pageContext.getServletContext().getContextPath()%>/replies/" + bno + "/" + replyPage);
 					}
 				}
 			});
@@ -279,19 +279,19 @@
 			console.log(formObj);
 
 			$("#modifyList").on("click", function() {
-				formObj.attr("action", "/sboard/modifyPage");
+				formObj.attr("action", "<%=pageContext.getServletContext().getContextPath()%>/sboard/modifyPage");
 				formObj.attr("method", "get");
 				formObj.submit();
 			});
 
 			$("#deleteList").on("click", function() {
-				formObj.attr("action", "/sboard/removePage");
+				formObj.attr("action", "<%=pageContext.getServletContext().getContextPath()%>/sboard/removePage");
 				formObj.submit();
 			});
 
 			$("#combackList").on("click", function() {
 				formObj.attr("method", "get");
-				formObj.attr("action", "/sboard/list");
+				formObj.attr("action", "<%=pageContext.getServletContext().getContextPath()%>/sboard/list");
 				formObj.submit();
 			});
 
