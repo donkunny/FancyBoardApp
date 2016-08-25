@@ -32,7 +32,7 @@
 		<c:forEach items="${list}" var="boardVO">
 			<tr>
 				<td>${boardVO.bno}</td>
-				<td><a href='/sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}'>
+				<td><a href='<c:url value="../sboard/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${boardVO.bno}" />'>
 						${boardVO.title} <strong>[ ${boardVO.replycnt} ]</strong></a></td>
 				<td>${boardVO.writer}</td>
 				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${boardVO.regdate}" /></td>
@@ -101,7 +101,7 @@
 		</div>
 	</div>
 
-	<script src="/resources/jquery-3.1.0.min.js"></script>
+	<script src="<%=pageContext.getServletContext().getContextPath()%>/resources/jquery-3.1.0.min.js"></script>
 	<script>
 		var result = '${msg}';
 		if (result == 'SUCCESS') {

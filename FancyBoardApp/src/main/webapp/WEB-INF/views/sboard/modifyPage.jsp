@@ -50,7 +50,7 @@
 		</div>
 	</form>
 	
-	<script src="/resources/jquery-3.1.0.min.js"></script>
+	<script src="<%=pageContext.getServletContext().getContextPath()%>/resources/jquery-3.1.0.min.js"></script>
 	<script>
 		$(document).read(
 			function(){
