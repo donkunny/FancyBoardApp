@@ -1,5 +1,5 @@
 # FancyBoardApp
-This is bulletin board app which has functions, which are
+This is bulletin board app which has functions as below.
 * searching(검색 기능)
 * replies(댓글 달기)
 * pagination(페이지 매기기)
