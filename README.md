@@ -1,6 +1,10 @@
 # FancyBoardApp
 This is bulletin board app which will be added with bootstrap UI, reply function
 
+* More Information you want, visit my blog, www.donkunny.com
+* Demo test app is uploaded here, <a href="http://www.donkunny.com:8080/FancyBoardApp/sboard/list">FancyBoardApp</a>
+* Any commands are fine. Thank you
+
 <h3>Instruction</h3>
 <h4>1. Make database and tables</h4>
 ```
