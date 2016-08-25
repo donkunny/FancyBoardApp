@@ -14,7 +14,7 @@ This is bulletin board app which has functions as below.
 <h4>1. Make database and tables</h4>
 ```
 mysql> create database fancyBoard;
-mysql> use board2;
+mysql> use fancyBoard;
 mysql> create table tbl_board (
     -> bno INT NOT NULL AUTO_INCREMENT,
     -> title VARCHAR(200) NOT NULL,
