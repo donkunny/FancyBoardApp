@@ -1,6 +1,11 @@
 # FancyBoardApp
-This is bulletin board app which will be added with bootstrap UI, reply function
+This is bulletin board app which has functions, which are
+* searching(검색 기능)
+* replies(댓글 달기)
+* pagination(페이지 매기기)
+* counting of views & replies(조회수, 댓글 수)
 
+<hr />
 * More Information you want, visit my blog, www.donkunny.com
 * Demo test app is uploaded here, <a href="http://www.donkunny.com:8080/FancyBoardApp/sboard/list">FancyBoardApp</a>
 * Any commands are fine. Thank you
