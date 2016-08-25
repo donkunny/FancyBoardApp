@@ -66,3 +66,6 @@ $ git checkout development
 	<context:component-scan base-package="com.donkunny.persistence"></context:component-scan>
 	<context:component-scan base-package="com.donkunny.service"></context:component-scan>
 ```
+
+<h4>Reference </h4>
+* 코드로 배우는 스프링 웹 프로젝트(구멍가게 코딩단 지음, 남가람북스)
